@@ -6,11 +6,16 @@ const catchRequests = async (req) => {
 
     const js = (rep) => rep.language == "JavaScript"
     
+
     let justJs = data.filter(js)
+    
+    
     let justNames = []
     for (let i in justJs){
         justNames.push(justJs[i].name)
     }
+    
+    
     document.getElementById("repos").textContent= justNames
     console.log(data)
     //console.log(justJs)
