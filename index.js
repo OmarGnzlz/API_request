@@ -12,7 +12,7 @@ const catchRequests = async (req) => {
         justNames.push(justJs[i].name)
     }
     document.getElementById("repos").textContent= justNames
-    //console.log(data)
+    console.log(data)
     //console.log(justJs)
     
         
@@ -25,7 +25,7 @@ const search = () =>{
         
     let user = document.getElementById("MyInput").value
         
-    let req = new Request(`${api_url}${user}/repos`)
+    let req = new Request(`${api_url}${user}/repos?page=1&per_page=100`)
 
     catchRequests(req).catch(() => console.log("Algo salio mal"))
 }
